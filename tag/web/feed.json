@@ -1,0 +1,18 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "Hexo • All posts by \"web\" tag",
+    "description": "",
+    "home_page_url": "https://peppermint0323.github.io",
+    "items": [
+        {
+            "id": "https://peppermint0323.github.io/2024/10/24/test-1/",
+            "url": "https://peppermint0323.github.io/2024/10/24/test-1/",
+            "title": "test",
+            "date_published": "2024-10-24T14:59:29.000Z",
+            "content_html": "<h1 id=\"文件包含\"><a href=\"#文件包含\" class=\"headerlink\" title=\"文件包含\"></a>文件包含</h1><p>1.web78<br><img data-src=\"/%E6%88%AA%E5%B1%8F2024-07-10%2009.31.52.png\"><!-- {\"width\":484} --><br>有include函数，直接选择data伪协议传参：<br><img data-src=\"/%E6%88%AA%E5%B1%8F2024-07-10%2009.30.32.png\"><img data-src=\"/%E6%88%AA%E5%B1%8F2024-07-10%2009.31.33.png\"></p>\n<p>2.web79<br><img data-src=\"/%E6%88%AA%E5%B1%8F2024-07-10%2009.34.19.png\"><br>过滤了php字符，但可以用&lt;?&#x3D;来代替&lt;?php:<br><img data-src=\"/%E6%88%AA%E5%B1%8F2024-07-10%2009.37.57.png\"></p>\n<p>3.web80<br><img data-src=\"/%E6%88%AA%E5%B1%8F2024-07-10%2009.40.16.png\"><br>看到过滤了php和data伪协议，采用正常包含日志文件的方式去做<br><img data-src=\"/%E6%88%AA%E5%B1%8F2024-07-10%2010.00.47.png\"><br>抓包，在User-Agent中加入php代码<br><img data-src=\"/%E6%88%AA%E5%B1%8F2024-07-10%2009.58.21.png\">找到了fl0g.php文件<br><img data-src=\"/%E6%88%AA%E5%B1%8F2024-07-10%2009.59.16.png\"></p>\n<p>4.web81<br><img data-src=\"/%E6%88%AA%E5%B1%8F2024-07-10%2010.08.41.png\"><!-- {\"width\":533} --><br>过滤了：，本来可以的大小写绕过使用伪协议是不行了，乖乖用日志文件包含，步骤和上题一样<br><img data-src=\"/%E6%88%AA%E5%B1%8F2024-07-10%2010.12.22.png\"><br><img data-src=\"/%E6%88%AA%E5%B1%8F2024-07-10%2010.12.53.png\"></p>\n<p>5.web87<br><img data-src=\"/%E6%88%AA%E5%B1%8F2024-07-10%2010.45.35.png\"><br>采用两次url编码，将str_replace函数绕过：<br>?file&#x3D;php:&#x2F;&#x2F;filter&#x2F;write&#x3D;string.rot13&#x2F;resource&#x3D;shell.php<br>content请求体则采用字符替换（ROT13编码）能直接将死亡代码转码分解<br><img data-src=\"/%E6%88%AA%E5%B1%8F2024-07-10%2014.48.15.png\"><br>写入shell.php<br><img data-src=\"/%E6%88%AA%E5%B1%8F2024-07-10%2014.46.25.png\"></p>\n<p>6.web88<br><img data-src=\"/%E6%88%AA%E5%B1%8F2024-07-10%2015.10.42.png\"><br>用data伪协议，base64编码绕过，编码最后如果出现&#x3D;直接能删，遇到+的话，就要重新构造：<br><img data-src=\"/%E6%88%AA%E5%B1%8F2024-07-10%2015.22.29.png\"><br><img data-src=\"/%E6%88%AA%E5%B1%8F2024-07-10%2015.26.48.png\"></p>\n<p>7.web117<br><img data-src=\"/%E6%88%AA%E5%B1%8F2024-07-10%2015.31.29.png\"><br>和87差不多的写法，不过由于base64和rot编码被过滤了，所以采用ucs-2来写：<br><img data-src=\"/%E6%88%AA%E5%B1%8F2024-07-10%2016.29.55.png\"><br><img data-src=\"/%E6%88%AA%E5%B1%8F2024-07-10%2016.24.46.png\"><img data-src=\"/%E6%88%AA%E5%B1%8F2024-07-10%2016.25.22.png\"></p>\n",
+            "tags": [
+                "web"
+            ]
+        }
+    ]
+}

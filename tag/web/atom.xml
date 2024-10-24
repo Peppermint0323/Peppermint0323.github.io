@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://peppermint0323.github.io</id>
+    <title>Hexo • Posts by &#34;web&#34; tag</title>
+    <link href="https://peppermint0323.github.io" />
+    <updated>2024-10-24T14:59:29.000Z</updated>
+    <category term="web" />
+    <entry>
+        <id>https://peppermint0323.github.io/2024/10/24/test-1/</id>
+        <title>test</title>
+        <link rel="alternate" href="https://peppermint0323.github.io/2024/10/24/test-1/"/>
+        <content type="html">&lt;h1 id=&#34;文件包含&#34;&gt;&lt;a href=&#34;#文件包含&#34; class=&#34;headerlink&#34; title=&#34;文件包含&#34;&gt;&lt;/a&gt;文件包含&lt;/h1&gt;&lt;p&gt;1.web78&lt;br&gt;&lt;img data-src=&#34;/%E6%88%AA%E5%B1%8F2024-07-10%2009.31.52.png&#34;&gt;&lt;!-- {&#34;width&#34;:484} --&gt;&lt;br&gt;有include函数，直接选择data伪协议传参：&lt;br&gt;&lt;img data-src=&#34;/%E6%88%AA%E5%B1%8F2024-07-10%2009.30.32.png&#34;&gt;&lt;img data-src=&#34;/%E6%88%AA%E5%B1%8F2024-07-10%2009.31.33.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;2.web79&lt;br&gt;&lt;img data-src=&#34;/%E6%88%AA%E5%B1%8F2024-07-10%2009.34.19.png&#34;&gt;&lt;br&gt;过滤了php字符，但可以用&amp;lt;?&amp;#x3D;来代替&amp;lt;?php:&lt;br&gt;&lt;img data-src=&#34;/%E6%88%AA%E5%B1%8F2024-07-10%2009.37.57.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;3.web80&lt;br&gt;&lt;img data-src=&#34;/%E6%88%AA%E5%B1%8F2024-07-10%2009.40.16.png&#34;&gt;&lt;br&gt;看到过滤了php和data伪协议，采用正常包含日志文件的方式去做&lt;br&gt;&lt;img data-src=&#34;/%E6%88%AA%E5%B1%8F2024-07-10%2010.00.47.png&#34;&gt;&lt;br&gt;抓包，在User-Agent中加入php代码&lt;br&gt;&lt;img data-src=&#34;/%E6%88%AA%E5%B1%8F2024-07-10%2009.58.21.png&#34;&gt;找到了fl0g.php文件&lt;br&gt;&lt;img data-src=&#34;/%E6%88%AA%E5%B1%8F2024-07-10%2009.59.16.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;4.web81&lt;br&gt;&lt;img data-src=&#34;/%E6%88%AA%E5%B1%8F2024-07-10%2010.08.41.png&#34;&gt;&lt;!-- {&#34;width&#34;:533} --&gt;&lt;br&gt;过滤了：，本来可以的大小写绕过使用伪协议是不行了，乖乖用日志文件包含，步骤和上题一样&lt;br&gt;&lt;img data-src=&#34;/%E6%88%AA%E5%B1%8F2024-07-10%2010.12.22.png&#34;&gt;&lt;br&gt;&lt;img data-src=&#34;/%E6%88%AA%E5%B1%8F2024-07-10%2010.12.53.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;5.web87&lt;br&gt;&lt;img data-src=&#34;/%E6%88%AA%E5%B1%8F2024-07-10%2010.45.35.png&#34;&gt;&lt;br&gt;采用两次url编码，将str_replace函数绕过：&lt;br&gt;?file&amp;#x3D;php:&amp;#x2F;&amp;#x2F;filter&amp;#x2F;write&amp;#x3D;string.rot13&amp;#x2F;resource&amp;#x3D;shell.php&lt;br&gt;content请求体则采用字符替换（ROT13编码）能直接将死亡代码转码分解&lt;br&gt;&lt;img data-src=&#34;/%E6%88%AA%E5%B1%8F2024-07-10%2014.48.15.png&#34;&gt;&lt;br&gt;写入shell.php&lt;br&gt;&lt;img data-src=&#34;/%E6%88%AA%E5%B1%8F2024-07-10%2014.46.25.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;6.web88&lt;br&gt;&lt;img data-src=&#34;/%E6%88%AA%E5%B1%8F2024-07-10%2015.10.42.png&#34;&gt;&lt;br&gt;用data伪协议，base64编码绕过，编码最后如果出现&amp;#x3D;直接能删，遇到+的话，就要重新构造：&lt;br&gt;&lt;img data-src=&#34;/%E6%88%AA%E5%B1%8F2024-07-10%2015.22.29.png&#34;&gt;&lt;br&gt;&lt;img data-src=&#34;/%E6%88%AA%E5%B1%8F2024-07-10%2015.26.48.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;7.web117&lt;br&gt;&lt;img data-src=&#34;/%E6%88%AA%E5%B1%8F2024-07-10%2015.31.29.png&#34;&gt;&lt;br&gt;和87差不多的写法，不过由于base64和rot编码被过滤了，所以采用ucs-2来写：&lt;br&gt;&lt;img data-src=&#34;/%E6%88%AA%E5%B1%8F2024-07-10%2016.29.55.png&#34;&gt;&lt;br&gt;&lt;img data-src=&#34;/%E6%88%AA%E5%B1%8F2024-07-10%2016.24.46.png&#34;&gt;&lt;img data-src=&#34;/%E6%88%AA%E5%B1%8F2024-07-10%2016.25.22.png&#34;&gt;&lt;/p&gt;
+</content>
+        <category term="web" />
+        <updated>2024-10-24T14:59:29.000Z</updated>
+    </entry>
+</feed>
